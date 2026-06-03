@@ -259,7 +259,7 @@
     <div class="slide s1 active">
       <div class="glow"></div>
       <div class="wrap hero-inner reveal">
-        <span class="tag">★ Тоглоомын тоног төхөөрөмж</span>
+        <span class="tag">★ Gaming gear shop</span>
         <h1>Тоглоомын <span>ертөнцөд</span> тавтай морил!</h1>
         <p>Монголын топ геймерүүдийн сонголт. Хурд, нарийвчлал, загвар — бүгд нэг дор.</p>
         <a href="#products" class="btn">Дэлгүүр харах →</a>
@@ -279,8 +279,8 @@
       <div class="wrap hero-inner reveal">
         <span class="tag">🔥 Хямдрал</span>
         <h1>Онцгой <span>хямдрал</span> 30% хүртэл</h1>
-        <p>Хязгаарлагдмал хугацааны санал. Дуртай төхөөрөмжөө хямдхан аваарай.</p>
-        <a href="#offers" class="btn">Саналууд →</a>
+        <p>Хугацаат хямдрал. Таалагдсанаа хямдхан аваарай.</p>
+        <a href="#offers" class="btn">Үзэх →</a>
       </div>
     </div>
   </div>
@@ -371,7 +371,7 @@ const TINT = {mouse:'rgba(0,255,136,.10)',keyboard:'rgba(0,212,255,.10)',headset
 
 // ---- product data ----
 const products = [
-  {id:1,cat:'Хулгана',type:'mouse',name:'Аянга PRO 12K хулгана',price:120000},
+  {id:1,cat:'Хулгана',type:'mouse',name:'PRO X SUPERLIGHT 2',price:350000},
   {id:2,cat:'Гар',type:'keyboard',name:'Механик RGB гар «Сүлд»',price:189000},
   {id:3,cat:'Чихэвч',type:'headset',name:'7.1 Surround чихэвч «Гэрэгэ»',price:165000},
   {id:4,cat:'Дэлгэц',type:'monitor',name:'240Гц 27" тоглоомын дэлгэц',price:890000},
@@ -397,7 +397,7 @@ document.getElementById('productGrid').innerHTML = products.map(p=>`
       <h3>${p.name}</h3>
       <div class="row">
         <span class="price">${fmt(p.price)}</span>
-        <button class="add" data-id="${p.id}">Сагсанд нэмэх</button>
+        <button class="add" data-id="${p.id}">Сагслах</button>
       </div>
     </div>
   </div>`).join('');
@@ -411,7 +411,7 @@ document.getElementById('offerGrid').innerHTML = offers.map(p=>`
       <h3>${p.name}</h3>
       <div class="row">
         <span><span class="old">${fmt(p.old)}</span><span class="price">${fmt(p.price)}</span></span>
-        <button class="add" data-id="${p.id}">Сагсанд нэмэх</button>
+        <button class="add" data-id="${p.id}">Сагслах</button>
       </div>
     </div>
   </div>`).join('');
@@ -474,7 +474,7 @@ document.addEventListener('click', e=>{
   if(e.target.classList.contains('add')){
     addToCart(+e.target.dataset.id);
     e.target.textContent = '✓ Нэмэгдлээ';
-    setTimeout(()=>e.target.textContent='Сагсанд нэмэх',900);
+    setTimeout(()=>e.target.textContent='Сагслах',900);
   }
 });
 
@@ -487,7 +487,7 @@ document.getElementById('closeCart').onclick = closeCart;
 overlay.onclick = closeCart;
 document.getElementById('checkout').onclick = ()=>{
   if(cart.length===0){alert('Таны сагс хоосон байна.');return;}
-  alert('Баярлалаа! Таны захиалга амжилттай хүлээн авлаа. 🎮');
+  alert('Баярлалаа! Захиалга амжилттай. 🎮');
   cart=[];render();closeCart();
 };
 
